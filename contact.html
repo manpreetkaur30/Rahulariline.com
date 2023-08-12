@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Airline JobEntry</title>
+    <title>Airline job Entry</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -45,7 +45,7 @@
         <!-- Navbar Start -->
         <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
             <a href="index.html" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
-                <h1 class="m-0 text-primary">Rahul</h1>
+                <h1 class="m-0 text-primary">Rahul </h1>
             </a>
             <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -113,7 +113,7 @@
                                     <div class="bg-white border rounded d-flex flex-shrink-0 align-items-center justify-content-center me-3" style="width: 45px; height: 45px;">
                                         <i class="fa fa-envelope-open text-primary"></i>
                                     </div>
-                                    <span>Rahul@.com</span>
+                                    <span>info@ajaykumar.com</span>
                                 </div>
                             </div>
                             <div class="col-md-4 wow fadeIn" data-wow-delay="0.5s">
@@ -121,7 +121,7 @@
                                     <div class="bg-white border rounded d-flex flex-shrink-0 align-items-center justify-content-center me-3" style="width: 45px; height: 45px;">
                                         <i class="fa fa-phone-alt text-primary"></i>
                                     </div>
-                                    <span>+9170370-68596</span>
+                                    <span>+919191919191</span>
                                 </div>
                             </div>
                         </div>
@@ -134,23 +134,23 @@
                             <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit
                                 Nequaperiam inventore, suscipit dolorem quae eius in omnis laboriosam consequuntur facilis consequatur! Obcaecati, placeat.
                                   </a></p>
-                            <form>
+                            <form method="post" id="form">
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                            <input type="text" class="form-control" name="name" placeholder="Your Name">
                                             <label for="name">Your Name</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                            <input type="email" class="form-control" name="email" placeholder="Your Email">
                                             <label for="email">Your Email</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                            <input type="text" class="form-control" name="subject" placeholder="Subject">
                                             <label for="subject">Subject</label>
                                         </div>
                                     </div>
@@ -161,7 +161,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                        <button class="btn btn-primary w-100 py-3" type="submit" name="btn">Send Message</button>
                                     </div>
                                 </div>
                             </form>
@@ -221,8 +221,8 @@
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                             &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved. 
 							
-							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-							Designed By <a class="border-bottom" href="#">Code By Er.Manpreet Kaur</a>
+							
+							Designed By <a class="border-bottom" href="#">Code ByEr.Manpreet Kaur</a>
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
@@ -253,6 +253,24 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script >
+        let url='https://script.google.com/macros/s/AKfycbxHVEZPIS8t01daB8L76HKQsxd65EGAE2ulCrOQUHZ98cK-EQg9d9mgEJzCYkAYsGNQ/exec'
+
+        let form=document.querySelector('#form');
+        form.addEventListener("submit",(e)=>{
+            e.target.btn="subitting";
+            let d=new FormData(form);
+            fetch(url,{
+                method:"POST",
+                body:d
+            }).then((res)=>res.text())
+            .then((finalRes)=>{
+                e.target.btn.innerHTML="submit"   
+                console.log(finalRes))
+        }
+            e.preventDefault();
+        })
+    </script>
 </body>
 
 </html>
